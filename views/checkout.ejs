@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <%= order.amount %>
+    <br>
+    <% order.packages.forEach((item) => { %>
+      品項：<%= item.id %>
+      、單價：<%= item.amount %>
+    <% }) %>
+
+    <form action="/linePay/<%= order.orderId %>" method="POST">
+      <button type="submit">送出表單</button>
+    </form>
+  </body>
+</html>
